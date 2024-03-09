@@ -31,34 +31,17 @@ const TodoList = () => {
 		await deleteTodo(id);
 	}
 
-	const putTodos = async (id: number, item: []) => {
-		console.log(id);
-		const itemPutMap = item.map((itemPut) => {
-			if (itemPut._id === id) {
-				return itemPut;
-			}
-		});
-		return {
+	const putTodos = async (_id: number) => {
+		const newData = {
 			firstName: inputValue1,
 			lastName: inputValue2,
-			_id: id,
 		};
-		// const itemPutResult = item.map((itemPut) => {
-		// 	if(itemPut._id === id) {
-		// 		return itemPut;
-		// 	}
-		// 	return {
-		// 		firstName: inputValue1,
-		// 		lastName: inputValue2,
-		// 		_id: id
-		// 	}
-		// })
-
-		const newData = {
-			itemPutMap,
-		};
-		await editTodo(id, newData);
-		setIsResult(false);
+		if (inputValue1.trim() === "" && inputValue2.trim() === "") {
+			alert("Бир нерсе жазыныз input ка!!!");
+		} else {
+			editTodo({ _id, newData });
+			setIsResult(null);
+		}
 	};
 
 	function EditItemId(id: number) {
@@ -103,9 +86,7 @@ const TodoList = () => {
 										value={inputValue2}
 										onChange={(e) => setInputValue2(e.target.value)}
 									/>
-									<button onClick={() => putTodos(item._id!, item)}>
-										Save
-									</button>
+									<button onClick={() => putTodos(item._id!)}>Save</button>
 									<button onClick={() => setIsResult(null)}>Cancel</button>
 								</>
 							) : (

@@ -29,14 +29,14 @@ export namespace CRUD {
 		lastName: string;
 	}[];
 
-	export type EditCrudRequest = {
-		_id?: number;
-		firstName: string;
-		lastName: string;
-	};
-	export type EditCrudResponse = {
-		_id?: number;
-		firstName: string;
-		lastName: string;
-	}[];
+	// export type EditCrudRequest = {
+	// 	_id?: number;
+	// 	firstName: string;
+	// 	lastName: string;
+	// };
+	// export type EditCrudResponse = {
+	// 	_id?: number;
+	// 	firstName: string;
+	// 	lastName: string;
+	// }[];
 }

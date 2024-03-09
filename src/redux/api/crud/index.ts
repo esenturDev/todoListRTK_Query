@@ -30,8 +30,8 @@ const api = index.injectEndpoints({
 			}),
 			invalidatesTags: ["crud"],
 		}),
-		EditTodo: builder.mutation<CRUD.EditCrudResponse, CRUD.EditCrudRequest>({
-			query: ( _id, newData ) => ({
+		EditTodo: builder.mutation({
+			query: ({ _id, newData }) => ({
 				url: `${_id}`,
 				method: "PATCH",
 				body: newData,
