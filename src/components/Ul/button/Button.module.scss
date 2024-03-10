@@ -1,0 +1,13 @@
+.buttons {
+	padding-inline: 14px;
+	padding-block: 14px;
+	border: none;
+	border-radius: 9px;
+	background-color: rgb(247, 145, 42);
+	color: black;
+	font-size: 17px;
+	&:hover {
+		transition: all 0.3s ease;
+		background-color: rgb(243, 154, 64);
+	}
+}

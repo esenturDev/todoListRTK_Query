@@ -5,5 +5,5 @@ export const Button: FC<{
   children: ReactNode;
   onClick: () => void;
 }> = ({children, onClick}) => {
-  return <button onClick={onClick}>{children}</button>
+  return <button className={scss.buttons} onClick={onClick}>{children}</button>
 }

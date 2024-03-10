@@ -1,0 +1,13 @@
+.layout {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	main {
+		margin-top: 10px;
+	}
+	footer {
+		margin-top: auto;
+	}
+}

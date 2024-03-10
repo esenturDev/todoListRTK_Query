@@ -1,0 +1,28 @@
+.Cards {
+	.content {
+		display: flex;
+		justify-content: space-around;
+		align-items: start;
+		flex-wrap: wrap;
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			width: 200px;
+			height: auto;
+			padding-inline: 10px;
+			padding-block: 10px;
+			border-radius: 12px;
+			img {
+				width: 200px;
+				height: 285px;
+				border-radius: 10px;
+			}
+			p {
+				font-size: 22px;
+				font-weight: 600;
+			}
+		}
+	}
+}

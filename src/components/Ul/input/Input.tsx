@@ -7,7 +7,7 @@ const Input: FC<{
   setData: (value: string) => void;
   placeholder: string;
 }> = ({type, value, setData, placeholder}) => {
-  return <input type={type} placeholder={placeholder} value={value} onChange={(e) => setData(e.target.value)}/>
+  return <input className={scss.inputs} type={type} placeholder={placeholder} value={value} onChange={(e) => setData(e.target.value)}/>
 }
 
 export default Input
