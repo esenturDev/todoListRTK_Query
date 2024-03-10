@@ -5,6 +5,8 @@ import {
 	useGetTodosQuery,
 } from "../../../redux/api/crud";
 import scss from "./Cards.module.scss";
+import Input from "../../Ul/input/Input";
+import { Button } from "../../Ul/button/Button";
 export const Cards = () => {
 	const { data, isLoading } = useGetTodosQuery();
 	const [deleteTodo] = useDeleteTodoMutation();
@@ -46,29 +48,31 @@ export const Cards = () => {
 								<div className={scss.card} key={item._id}>
 									{isResult === item._id ? (
 										<>
-											<input
+											<Input
 												type="text"
 												value={inputValue1}
-												onChange={(e) => setInputValue1(e.target.value)}
+												setData={setInputValue1}
+												placeholder="название кино..."
 											/>
-											<input
+											<Input
 												type="text"
 												value={inputValue2}
-												onChange={(e) => setInputValue2(e.target.value)}
+												setData={setInputValue2}
+												placeholder="ссылка для фото..."
 											/>
-											<button onClick={() => putTodos(item._id!)}>Save</button>
-											<button onClick={() => setIsResult(null)}>Cancel</button>
+											<Button onClick={() => putTodos(item._id!)}>Save</Button>
+											<Button onClick={() => setIsResult(null)}>Cancel</Button>
 										</>
 									) : (
 										<>
 											<img src={item.lastName} alt="logo" />
 											<p>{item.firstName}</p>
-											<button onClick={() => deleteTodos(item._id!)}>
+											<Button onClick={() => deleteTodos(item._id!)}>
 												delete
-											</button>
-											<button onClick={() => EditItemId(item._id!)}>
+											</Button>
+											<Button onClick={() => EditItemId(item._id!)}>
 												Edit
-											</button>
+											</Button>
 										</>
 									)}
 								</div>

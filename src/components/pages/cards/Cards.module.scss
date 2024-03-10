@@ -4,16 +4,19 @@
 		justify-content: space-around;
 		align-items: start;
 		flex-wrap: wrap;
+		gap: 1rem;
 		.card {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: space-between;
 			width: 200px;
-			height: auto;
+			height: 350px;
 			padding-inline: 10px;
 			padding-block: 10px;
 			border-radius: 12px;
+			gap: 1rem;
+			margin-bottom: 2rem;
 			img {
 				width: 200px;
 				height: 285px;

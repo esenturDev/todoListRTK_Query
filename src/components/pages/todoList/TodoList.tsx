@@ -14,6 +14,8 @@ const TodoList = () => {
 			return;
 		} else {
 			await createTodo({ firstName, lastName });
+			setFirstName("");
+			setLastName("");
 		}
 	};
 
