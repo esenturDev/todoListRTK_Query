@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import {
 	useDeleteTodoMutation,
@@ -14,8 +15,8 @@ export const Cards = () => {
 	const [inputValue1, setInputValue1] = useState<string>("");
 	const [inputValue2, setInputValue2] = useState<string>("");
 	const [isResult, setIsResult] = useState<number | null | boolean>(null);
-	async function deleteTodos(id: number) {
-		await deleteTodo(id);
+	async function deleteTodos(_id: any) {
+		await deleteTodo(_id).unwrap();
 	}
 	const putTodos = async (_id: number) => {
 		const newData = {

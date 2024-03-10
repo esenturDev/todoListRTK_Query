@@ -24,8 +24,8 @@ const api = index.injectEndpoints({
 			CRUD.DeleteCrudResponse,
 			CRUD.DeleteCrudRequest
 		>({
-			query: (id) => ({
-				url: `${id}`,
+			query: (_id) => ({
+				url: `${_id}`,
 				method: "DELETE",
 			}),
 			invalidatesTags: ["crud"],
